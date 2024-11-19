@@ -27,7 +27,6 @@ def action_change():
                 if option == "name":
                     new_name = str(input("Please enter the employee's new name: "))
                     employee_info['name'] = new_name
-                    # employee.append(new_name1)
                 elif option == "position":
                     new_position = str(input("Please enter the employee's current position: "))
                     employee_info['position'] = new_position
@@ -53,6 +52,15 @@ def change_info():
         if x['name'] == employee_name:
             action_change()
             break
+def remove_employee():
+    l = []
+    Employee_name = str(input("Please enter the employee's name: "))
+    age = int(input("Please enter the employee's age: "))
+    position = str(input("Please enter the employee's current position: "))
+    l.append(Employee_name, age, position)
+    for s in l:
+        if s == Employee_name:
+            del employee_info[s]
 
     
 def main():
@@ -62,7 +70,7 @@ def main():
         print("2.Change something about the information")
         print("3.Show all")
         print("4.exit")
-        choice = input("Please choose your option from 1 to 3: ")
+        choice = int(input("Please choose your option from 1 to 3: "))
         if choice == '1':
             add_employee_info()
         elif choice == '2':
