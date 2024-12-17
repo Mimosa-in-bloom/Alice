@@ -1,4 +1,10 @@
-from guizero import App, Text, Picture
+from guizero import App, Text, Picture, Text  
+count = 1
+def switch():
+    global count
+    count =+ 1
+    
+
 
 
 app = App()
